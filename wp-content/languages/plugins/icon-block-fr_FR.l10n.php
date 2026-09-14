@@ -1,0 +1,2 @@
+<?php
+return ['x-generator'=>'GlotPress/4.1.0','translation-revision-date'=>'2026-09-01 14:53:00+0000','plural-forms'=>'nplurals=2; plural=n > 1;','project-id-version'=>'Plugins - The Icon Block - Stable (latest release)','language'=>'fr','messages'=>['The Icon Block'=>'The Icon Block','block keywordsvg'=>'svg','block keywordicon'=>'icône','https://www.nickdiego.com'=>'https://www.nickdiego.com','Nick Diego'=>'Nick Diego','block titleIcon'=>'Icône','block descriptionInsert an SVG icon or graphic.'=>'Ajouter une icône ou une illustration SVG.']];
