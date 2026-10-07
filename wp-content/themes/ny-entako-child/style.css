@@ -1,0 +1,251 @@
+/*
+ Theme Name:   Ny entako template
+ Theme URI:    https://nyentako.local
+ Description:  Thème enfant pour NY ENTAKO
+ Author:       NY ENTAKO
+ Template:     twentytwentyfive
+ Version:      1.0.0
+*/
+
+/* Ajoutez vos styles CSS personnalisés ici (ex: grille d'icônes, animations, etc.) */
+/* 1. Importation de la police Inter depuis Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* 2. Application de la police sur tout le site */
+body, 
+button, 
+input, 
+select, 
+textarea {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* 3. Optionnel : Déclarer une variable CSS réutilisable */
+:root {
+  --font-sans: 'Inter', sans-serif;
+}
+/* Retire le soulignement/barre par défaut sur tous les liens de navigation */
+.wp-block-navigation-item a {
+  text-decoration: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+  position: relative;
+  padding-bottom: 4px;
+}
+
+/* Retire spécifiquement la barre sur la page active */
+.wp-block-navigation-item.current-menu-item a,
+.wp-block-navigation-item.current-menu-item a::after {
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+
+/* Underline personnalisé, invisible par défaut */
+.wp-block-navigation-item a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: currentColor;
+  transition: width 0.3s ease;
+}
+
+/* button */
+.fbtn {
+  background-color: #8a5a2b !important;
+}
+
+/* Underline qui apparaît uniquement au survol */
+.wp-block-navigation-item a:hover::after {
+  width: 100%;
+}
+main.wp-block-group {
+  margin-top: 0 !important;
+}
+
+main.wp-block-group > .wp-block-group.has-global-padding {
+  padding-top: 0 !important;
+}
+.flipcard {
+  position: relative;
+  height: 350px;
+  perspective: 1200px;
+}
+.flipcard .inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+.flipcard.flipped .inner {
+  transform: rotateY(180deg);
+}
+.flipcard.bg-marron .face.back {
+    background-color: #5c4033;
+    color: #ffffff
+  }
+.flipcard .face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  background: #f5f1ea;
+  border: 2.5px solid #d8cfc0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+}
+.flipcard .back {
+  transform: rotateY(180deg);
+}
+.flipcard .fbtn {
+  margin-top: 10px;
+  background: #1a1a1a;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 20px;
+  font-size: 13px;
+  cursor: pointer;
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  margin: 20px 0;
+  max-width: 1200px;
+margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+/* Conteneur parent */
+.cart-container {
+  position: relative !important;
+  display: inline-block;
+}
+
+/* Grille 2x3 positionnée dans le panier */
+.icon-grid-container {
+  position: absolute !important;
+  top: 30%;      /* Ajuste la position verticale */
+  left: 30%;     /* Ajuste la position horizontale */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  z-index: 5;
+  
+  /* Animation globale de flottaison */
+  animation: floatGrid 3.5s ease-in-out infinite;
+}
+
+/* Style de chaque carré d'icône */
+.icon-box {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Effet interactif au survol de chaque carré */
+.icon-box:hover {
+  transform: translateY(-4px) scale(1.08);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* Couleurs des fonds pastel */
+.icon-yellow { background-color: #FEF3C7; }
+.icon-blue   { background-color: #DBEAFE; }
+.icon-green  { background-color: #D1FAE5; }
+.icon-purple { background-color: #F3E8FF; }
+.icon-pink   { background-color: #FCE7F3; }
+.icon-orange { background-color: #FFEDD5; }
+
+/* Animation de flottaison */
+@keyframes floatGrid {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+@media (max-width: 1024px) {
+  /* La boîte du cover s'adapte à son contenu au lieu d'avoir une hauteur figée */
+  .wp-block-cover {
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  /* Le conteneur interne suit le flux normal, ne se cale plus en absolu/centré */
+  .wp-block-cover .wp-block-cover__inner-container {
+    position: relative !important;
+    height: auto !important;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  /* L'image de fond du cover doit aussi être en position relative pour ne pas 
+     forcer une hauteur fixe par-dessus le texte */
+  .wp-block-cover > span.wp-block-cover__background,
+  .wp-block-cover .wp-block-cover__image-background {
+    position: absolute !important;
+    inset: 0 !important;
+    height: 100% !important;
+  }
+  .cart-icon img,
+   .cart-icon svg {
+     max-width: 160px !important;
+     height: auto !important;
+     margin: 0 auto;
+     display: block;
+   }
+}
+@media (max-width: 782px) {
+  /* Centre le texte du hero sur mobile */
+  .wp-block-cover .wp-block-columns .wp-block-column {
+    text-align: center;
+    align-items: center;
+  }
+
+  /* Centre le bouton "Voir plus" */
+  .wp-block-cover .wp-block-buttons {
+    justify-content: center;
+  }
+
+  /* Redimensionne et centre l'image (les serviettes) */
+  .wp-block-cover .wp-block-image img {
+    max-width: 70%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+
+  /* Centre le conteneur de l'image lui-même */
+  .wp-block-cover .wp-block-column:has(.wp-block-image) {
+    display: flex;
+    justify-content: center;
+  }
+.wp-block-cover img {
+    object-fit: contain !important;
+   object-position: center center !important;
+  }
+}
+@media (max-width: 480px) {
+  .hero-image {
+    max-width: 100px !important;
+  }
+}

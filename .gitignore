@@ -1,0 +1,31 @@
+# Config sensible (mots de passe, clés)
+wp-config.php
+
+# Uploads (images, fichiers médias - trop lourds pour Git)
+wp-content/uploads/
+
+# Cache
+wp-content/cache/
+wp-content/*/cache/
+
+# Backups
+*.sql
+*.zip
+*.tar.gz
+
+# Logs
+*.log
+error_log
+
+# system folder / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Environnement Local by Flywheel
+.local-config.json
+
+# Si tu gères les plugins/thèmes via Composer plutôt qu'en dur
+# wp-content/plugins/
+# wp-content/themes/
