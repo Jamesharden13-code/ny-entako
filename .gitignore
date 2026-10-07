@@ -27,5 +27,5 @@ Thumbs.db
 .local-config.json
 
 # Si tu gères les plugins/thèmes via Composer plutôt qu'en dur
-# wp-content/plugins/
+wp-content/plugins/
 # wp-content/themes/
