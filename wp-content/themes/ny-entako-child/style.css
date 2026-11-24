@@ -7,11 +7,11 @@
  Version:      1.0.0
 */
 
-/* Ajoutez vos styles CSS personnalisés ici (ex: grille d'icônes, animations, etc.) */
-/* 1. Importation de la police Inter depuis Google Fonts */
+/* Add your custom CSS styles here (e.g., icon grid, animations, etc.) */
+/* 1. Importing the Inter font from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-/* 2. Application de la police sur tout le site */
+/* 2. Applying the font across the entire website */
 body, 
 button, 
 input, 
@@ -20,11 +20,13 @@ textarea {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-/* 3. Optionnel : Déclarer une variable CSS réutilisable */
+/* 3. Optional: Declare a reusable CSS variable */
 :root {
   --font-sans: 'Inter', sans-serif;
 }
-/* Retire le soulignement/barre par défaut sur tous les liens de navigation */
+
+
+/* Remove the default underline/bar from all navigation links */
 .wp-block-navigation-item a {
   text-decoration: none !important;
   border-bottom: none !important;
@@ -33,14 +35,14 @@ textarea {
   padding-bottom: 4px;
 }
 
-/* Retire spécifiquement la barre sur la page active */
+/* Specifically remove the bar from the active page */
 .wp-block-navigation-item.current-menu-item a,
 .wp-block-navigation-item.current-menu-item a::after {
   border-bottom: none !important;
   box-shadow: none !important;
 }
 
-/* Underline personnalisé, invisible par défaut */
+/* Custom underline, hidden by default */
 .wp-block-navigation-item a::after {
   content: "";
   position: absolute;
@@ -57,7 +59,7 @@ textarea {
   background-color: #8a5a2b !important;
 }
 
-/* Underline qui apparaît uniquement au survol */
+/* Underline that appears only on hover */
 .wp-block-navigation-item a:hover::after {
   width: 100%;
 }
@@ -125,27 +127,28 @@ margin-left: auto;
   padding: 0 20px;
   box-sizing: border-box;
 }
-/* Conteneur parent */
+
+
 .cart-container {
   position: relative !important;
   display: inline-block;
 }
 
-/* Grille 2x3 positionnée dans le panier */
+/* 2x3 grid positioned inside the cart */
 .icon-grid-container {
   position: absolute !important;
-  top: 30%;      /* Ajuste la position verticale */
-  left: 30%;     /* Ajuste la position horizontale */
+  top: 30%;      /* Adjust the vertical position */
+  left: 30%;     /* Adjust the horizontal position */
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   z-index: 5;
   
-  /* Animation globale de flottaison */
+  /* Global floating animation */
   animation: floatGrid 3.5s ease-in-out infinite;
 }
 
-/* Style de chaque carré d'icône */
+/* Style of each icon square */
 .icon-box {
   width: 80px;
   height: 80px;
@@ -157,13 +160,13 @@ margin-left: auto;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Effet interactif au survol de chaque carré */
+/* Interactive hover effect for each square */
 .icon-box:hover {
   transform: translateY(-4px) scale(1.08);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
 }
 
-/* Couleurs des fonds pastel */
+/* Pastel background colors */
 .icon-yellow { background-color: #FEF3C7; }
 .icon-blue   { background-color: #DBEAFE; }
 .icon-green  { background-color: #D1FAE5; }
@@ -171,7 +174,106 @@ margin-left: auto;
 .icon-pink   { background-color: #FCE7F3; }
 .icon-orange { background-color: #FFEDD5; }
 
-/* Animation de flottaison */
+/* ==========================================================================
+   NY ENTAKO Contact Form
+   ========================================================================== */
+
+.ny-form-container {
+	background-color: #faf6f0;
+	border: 1px solid #ede4d8;
+	border-radius: 16px;
+	padding: 32px;
+	box-sizing: border-box;
+}
+
+.ny-block-form {
+	display: flex;
+	flex-direction: column;
+	gap: 18px;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.ny-title-form {
+	margin: 0 0 6px;
+	font-size: 26px;
+	font-weight: 700;
+	line-height: 1.25;
+	color: #2b1a0e;
+}
+
+.ny-form-group {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.ny-style-texte {
+	font-size: 15px;
+	font-weight: 600;
+	line-height: 1.4;
+	color: #2b1a0e;
+}
+
+.ny-block-form .custom-input,
+.ny-block-form .custom-textarea {
+	width: 100%;
+	padding: 14px 16px;
+	font-family: inherit;
+	font-size: 15px;
+	line-height: 1.5;
+	color: #2b1a0e;
+	background-color: #ffffff;
+	border: 1px solid #d8cfc6;
+	border-radius: 10px;
+	box-sizing: border-box;
+	transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ny-block-form .custom-input::placeholder,
+.ny-block-form .custom-textarea::placeholder {
+	color: #9a8d82;
+}
+
+.ny-block-form .custom-input:focus,
+.ny-block-form .custom-textarea:focus {
+	outline: none;
+	border-color: #412817;
+	box-shadow: 0 0 0 3px rgba(65, 40, 23, 0.12);
+}
+
+.ny-block-form .custom-textarea {
+	min-height: 125px;
+	resize: vertical;
+}
+
+.ny-btn-wrapper {
+	margin-top: 6px;
+	width: 100%;
+}
+
+.ny-block-form .ny-btn-contact {
+	gap: 10px;
+	border-radius: 10px !important;
+	transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.ny-block-form .ny-btn-contact:hover {
+	background: #2d1b0f !important;
+}
+
+.ny-block-form .ny-btn-contact:active {
+	transform: scale(0.99);
+}
+
+.ny-block-form .text-button {
+	color: #ffffff;
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 1;
+}
+
+/* Floating animation */
 @keyframes floatGrid {
   0% {
     transform: translateY(0px);
@@ -184,13 +286,13 @@ margin-left: auto;
   }
 }
 @media (max-width: 1024px) {
-  /* La boîte du cover s'adapte à son contenu au lieu d'avoir une hauteur figée */
+ /* The cover box adjusts to its content instead of having a fixed height */
   .wp-block-cover {
     height: auto !important;
     min-height: 0 !important;
   }
 
-  /* Le conteneur interne suit le flux normal, ne se cale plus en absolu/centré */
+  /* The inner container follows the normal document flow instead of being absolutely positioned or centered */
   .wp-block-cover .wp-block-cover__inner-container {
     position: relative !important;
     height: auto !important;
@@ -198,8 +300,8 @@ margin-left: auto;
     padding-bottom: 40px;
   }
 
-  /* L'image de fond du cover doit aussi être en position relative pour ne pas 
-     forcer une hauteur fixe par-dessus le texte */
+/* The cover background image should also be relatively positioned to avoid
+   imposing a fixed height over the text */
   .wp-block-cover > span.wp-block-cover__background,
   .wp-block-cover .wp-block-cover__image-background {
     position: absolute !important;
@@ -215,18 +317,22 @@ margin-left: auto;
    }
 }
 @media (max-width: 782px) {
-  /* Centre le texte du hero sur mobile */
+  /* Center the hero text on mobile */
   .wp-block-cover .wp-block-columns .wp-block-column {
     text-align: center;
     align-items: center;
   }
 
-  /* Centre le bouton "Voir plus" */
   .wp-block-cover .wp-block-buttons {
     justify-content: center;
   }
+   
+  .ny-form-container {
+		padding: 20px;
+		border-radius: 12px;
+	}
 
-  /* Redimensionne et centre l'image (les serviettes) */
+ /* Resize and center the image (the towels) */
   .wp-block-cover .wp-block-image img {
     max-width: 70%;
     height: auto;
@@ -234,7 +340,6 @@ margin-left: auto;
     display: block;
   }
 
-  /* Centre le conteneur de l'image lui-même */
   .wp-block-cover .wp-block-column:has(.wp-block-image) {
     display: flex;
     justify-content: center;

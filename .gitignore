@@ -29,3 +29,9 @@ Thumbs.db
 # Si tu gères les plugins/thèmes via Composer plutôt qu'en dur
 wp-content/plugins/
 # wp-content/themes/
+# Local PHP information
+local-phpinfo.php
+# Local WordPress backups
+wp-content/ai1wm-backups/
+# Generated translation files
+wp-content/languages/
